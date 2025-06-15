@@ -346,7 +346,7 @@
             setupQuiz();
         });
         
-        const quizData = [
+        quizData = [
             { question: "Dụng cụ nào có mỏ để dễ dàng rót chất lỏng?", options: ["Bình tam giác", "Ống đong", "Cốc có mỏ", "Ống nghiệm"], answer: "Cốc có mỏ" },
             { question: "Để đo chính xác thể tích chất lỏng, ta nên dùng dụng cụ nào?", options: ["Cốc có mỏ", "Ống đong", "Bình cầu", "Bát sứ"], answer: "Ống đong" },
             { question: "Dụng cụ nào có cổ hẹp, thân phình to để tránh văng hóa chất khi lắc?", options: ["Bình tam giác", "Phễu", "Ống nghiệm", "Cốc có mỏ"], answer: "Bình tam giác" },
@@ -361,8 +361,8 @@
         let score = 0;
 
         function setupQuiz() {
-            const nextButton = document.getElementById('next-button');
-            const restartButton = document.getElementById('restart-button');
+            nextButton = document.getElementById('next-button');
+            restartButton = document.getElementById('restart-button');
             
             nextButton.addEventListener('click', () => {
                 currentQuestionIndex++;
@@ -385,14 +385,14 @@
         }
         
         function displayQuestion() {
-            const questionData = quizData[currentQuestionIndex];
+            questionData = quizData[currentQuestionIndex];
             document.getElementById('question-text').textContent = `Câu ${currentQuestionIndex + 1}: ${questionData.question}`;
             
-            const optionsContainer = document.getElementById('options-container');
+            optionsContainer = document.getElementById('options-container');
             optionsContainer.innerHTML = '';
             
             questionData.options.forEach(option => {
-                const button = document.createElement('button');
+                button = document.createElement('button');
                 button.textContent = option;
                 button.className = 'w-full p-4 border rounded-lg text-left transition-all duration-200 hover:bg-yellow-100 focus:bg-green-100 focus:ring-2 focus:ring-green-400';
                 button.onclick = (e) => handleOptionClick(e.target, questionData.answer);
@@ -402,7 +402,7 @@
         }
 
         function handleOptionClick(button, correctAnswer) {
-            const allOptions = document.querySelectorAll('#options-container button');
+            allOptions = document.querySelectorAll('#options-container button');
             allOptions.forEach(opt => {
                 opt.disabled = true;
                 if (opt.textContent === correctAnswer) {
@@ -423,7 +423,7 @@
             document.getElementById('quiz-question-area').classList.add('hidden');
             document.getElementById('quiz-result-area').classList.remove('hidden');
 
-            const percentage = Math.round((score / quizData.length) * 100);
+            percentage = Math.round((score / quizData.length) * 100);
             document.getElementById('score-text').textContent = `Các em đã trả lời đúng ${score} trên ${quizData.length} câu.`;
             document.getElementById('percentage-text').textContent = `${percentage}%`;
 
@@ -441,8 +441,8 @@
         }
 
         async function handleAskThanhLam(tabId) {
-            const input = document.getElementById(`question-${tabId}`);
-            const responseContainer = document.getElementById(`response-${tabId}`);
+            input = document.getElementById(`question-${tabId}`);
+            responseContainer = document.getElementById(`response-${tabId}`);
             const userQuestion = input.value.trim();
 
             if (!userQuestion) {
@@ -450,7 +450,7 @@
                 return;
             }
 
-            if (GEMINI_API_KEY === "[Dán API Key của bạn vào đây]") {
+            if (GEMINI_API_KEY === "[AIzaSyCtpvVNCZzRr59N-mISm5MVzJ5pVuj9Qxk]") {
                 responseContainer.innerHTML = '<span class="text-red-600 font-bold">Thầy Lâm đang bận một chút!</span><br>Có vẻ như API Key chưa được cấu hình. Vui lòng kiểm tra lại trong mã nguồn nhé.';
                 return;
             }
