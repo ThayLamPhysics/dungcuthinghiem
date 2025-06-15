@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài giảng của Thầy Lâm: Dụng cụ Thí nghiệm</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Be Vietnam Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Custom styles và animations */
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tab-button.active {
+            border-color: #10B981; /* green-500 */
+            background-color: #ECFDF5; /* green-50 */
+            color: #065F46; /* green-800 */
+            font-weight: 700;
+        }
+
+        .ai-response {
+            white-space: pre-wrap; 
+        }
+
+        .modal {
+            animation: fadeInModal 0.3s ease-out;
+        }
+        .modal-content {
+             animation: zoomInModal 0.3s ease-out;
+        }
+
+        @keyframes fadeInModal {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes zoomInModal {
+            from { transform: scale(0.9); }
+            to { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="min-h-screen bg-gradient-to-br from-green-100 via-yellow-50 to-yellow-100 p-4 sm:p-6 lg:p-8">
+        <div class="max-w-7xl mx-auto">
+            
+            <header class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-green-800">Bài giảng của Thầy Lâm</h1>
+                <p class="text-xl text-gray-600 mt-2">Khám phá thế giới kỳ thú của các dụng cụ thí nghiệm!</p>
+            </header>
+
+            <div id="tab-container" class="mb-6 bg-white/60 backdrop-blur-sm rounded-xl shadow-sm p-2 flex flex-wrap justify-center gap-2">
+                <button data-tab="tab1" class="tab-button active flex-grow sm:flex-grow-0 text-center px-4 py-3 border-b-4 border-transparent rounded-lg transition-all duration-300">Dụng cụ Thủy tinh</button>
+                <button data-tab="tab2" class="tab-button flex-grow sm:flex-grow-0 text-center px-4 py-3 border-b-4 border-transparent rounded-lg transition-all duration-300">Đo lường & Đun nóng</button>
+                <button data-tab="tab3" class="tab-button flex-grow sm:flex-grow-0 text-center px-4 py-3 border-b-4 border-transparent rounded-lg transition-all duration-300">Dụng cụ Điện</button>
+                <button data-tab="tab4" class="tab-button flex-grow sm:flex-grow-0 text-center px-4 py-3 border-b-4 border-transparent rounded-lg transition-all duration-300">An toàn Thí nghiệm</button>
+                <button data-tab="tab5" class="tab-button flex-grow sm:flex-grow-0 text-center px-4 py-3 border-b-4 border-transparent rounded-lg transition-all duration-300 text-yellow-700 font-bold">Kiểm tra kiến thức</button>
+            </div>
+
+            <main id="content-container">
+                <!-- Tab 1: Dụng cụ Thủy tinh -->
+                <div id="tab1" class="tab-content active">
+                    <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6">
+                        <h2 class="text-3xl font-bold text-green-700 mb-2 text-center">Gia đình Dụng cụ Thủy tinh</h2>
+                        <p class="text-center text-gray-600 mb-8">Chào các em, thầy sẽ giới thiệu từng thành viên trong gia đình thủy tinh của phòng thí nghiệm nhé. Mỗi bạn có một tài năng riêng đó!</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://data.vietchem.com.vn/labvietchem/2018/10/coc-thi-nghiem-01.jpg" alt="Cốc thuỷ tinh" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Cốc+thủy+tinh';">
+                                <h3 class="font-bold text-xl text-green-800">Cốc thủy tinh (Beaker)</h3>
+                                <p class="text-gray-700 mt-2">Bạn này như cái "tô thần kỳ", dùng để đựng, pha chế, đun nóng dung dịch. Cái mỏ nhỏ xinh giúp rót hóa chất không bị đổ ra ngoài.</p>
+                            </div>
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://data.vietchem.com.vn/labvietchem/2018/08/binh-tam-giac-mieng-hep-simax1.jpg" alt="Bình tam giác" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Bình+tam+giác';">
+                                <h3 class="font-bold text-xl text-green-800">Bình tam giác (Flask)</h3>
+                                <p class="text-gray-700 mt-2">Với cái cổ cao và thân hình rộng, bạn này là chuyên gia "lắc" hóa chất. Các em cứ yên tâm là không giọt nào bị văng ra ngoài đâu!</p>
+                            </div>
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://visitech.vn/wp-content/uploads/2019/09/ong-nghiem-thuy-tinh-700x350.png" alt="Ống nghiệm" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Ống+nghiệm';">
+                                <h3 class="font-bold text-xl text-green-800">Ống nghiệm (Test Tube)</h3>
+                                <p class="text-gray-700 mt-2">Là "sân khấu" chính cho các phản ứng hóa học với lượng nhỏ. Bạn này nhỏ gọn và có thể chịu được nhiệt độ cao khi đun nóng.</p>
+                            </div>
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1lVBKRReTic6CIAHoBFzwEbwQwhsae7fHkA&s" alt="Phễu lọc" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Phễu+lọc';">
+                                 <h3 class="font-bold text-xl text-green-800">Phễu lọc (Funnel)</h3>
+                                <p class="text-gray-700 mt-2">Bạn phễu là người trợ giúp đắc lực khi cần rót chất lỏng vào bình có miệng nhỏ, hoặc khi cần tách chất rắn ra khỏi dung dịch.</p>
+                            </div>
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://fact-depot.com/tmp/cache/images/_thumbs/720x720/media/product_images/Fact-Depot-ong-dong-thuy-tinh-chia-vach-xanh-lms-61-321-024-25ml.png" alt="Ống đong" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Ống+đong';">
+                                <h3 class="font-bold text-xl text-green-800">Ống đong (Cylinder)</h3>
+                                <p class="text-gray-700 mt-2">Người bạn "cao kều" này có rất nhiều vạch chia trên người. Nhiệm vụ của bạn ấy là đo thể tích chất lỏng một cách chính xác.</p>
+                            </div>
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://thietbigiaoduchaan.com/upload/sanpham/gs2065940_1-pipet-(ong-hut-nho-giot)-1611.png" alt="Ống hút nhỏ giọt" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Ống+hút';">
+                                <h3 class="font-bold text-xl text-green-800">Ống hút nhỏ giọt (Dropper)</h3>
+                                <p class="text-gray-700 mt-2">Khi cần lấy từng giọt dung dịch, không ai làm tốt hơn người bạn này. Giống như một nghệ sĩ đang chấm từng nét màu vậy.</p>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <h3 class="text-2xl font-bold text-yellow-700 mb-4 text-center">Góc tương tác của Thầy Lâm</h3>
+                            <div class="max-w-xl mx-auto flex flex-col sm:flex-row gap-2">
+                                <input type="text" id="question-tab1" class="flex-grow p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none" placeholder="Các em có thắc mắc gì về dụng cụ thủy tinh không?">
+                                <button onclick="handleAskThanhLam('tab1')" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-transform hover:scale-105">Hỏi Thầy</button>
+                            </div>
+                            <div id="response-tab1" class="mt-4 p-4 bg-green-50 rounded-lg min-h-[50px] text-gray-700 max-w-xl mx-auto"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Đo lường & Đun nóng -->
+                <div id="tab2" class="tab-content">
+                    <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6">
+                        <h2 class="text-3xl font-bold text-green-700 mb-2 text-center">Đo lường & Các công cụ đặc biệt</h2>
+                        <p class="text-center text-gray-600 mb-8">Khoa học là sự chính xác! Hãy cùng thầy khám phá những công cụ giúp chúng ta đo đạc và tạo ra những điều kỳ diệu nhé.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIvWAPrgPEMX0B00gxcr1dOGizI3t1C67J-A&s" alt="Đèn cồn" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Đèn+cồn';">
+                                <h3 class="font-bold text-xl text-green-800">Đèn cồn</h3>
+                                <p class="text-gray-700 mt-2">Là "bếp lửa mini" của nhà khoa học, cung cấp ngọn lửa đều và ổn định để đun nóng hóa chất một cách an toàn.</p>
+                            </div>
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCtkFWJqaWjx3MfIoB8JMPHHqrmUoHb9Uydg&s" alt="Kẹp gỗ" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Kẹp+gỗ';">
+                                <h3 class="font-bold text-xl text-green-800">Kẹp gỗ</h3>
+                                <p class="text-gray-700 mt-2">"Cánh tay nối dài" giúp chúng ta giữ ống nghiệm khi đun nóng mà không sợ bị bỏng. Luôn kẹp ở 1/3 phía trên miệng ống nhé!</p>
+                            </div>
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://hannavietnam.com/assets/images/but-do-phnhiet-do-01/HI98127.jpg" alt="Bút đo pH" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Bút+đo+pH';">
+                                <h3 class="font-bold text-xl text-green-800">Bút đo pH</h3>
+                                <p class="text-gray-700 mt-2">Muốn biết dung dịch là 'chua' hay 'kiềm'? Chiếc bút thần kỳ này sẽ cho các em biết ngay chỉ số pH, một thang đo quan trọng trong hóa học.</p>
+                            </div>
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://kiemdinhvung3.com/Files/general/Images/hak1.jpg" alt="Huyết áp kế" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Huyết+áp+kế';">
+                                <h3 class="font-bold text-xl text-green-800">Huyết áp kế</h3>
+                                <p class="text-gray-700 mt-2">Một vị khách từ môn Sinh học! Dụng cụ này giúp các bác sĩ đo huyết áp, một chỉ số quan trọng cho sức khỏe của chúng ta.</p>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <h3 class="text-2xl font-bold text-yellow-700 mb-4 text-center">Góc tương tác của Thầy Lâm</h3>
+                            <div class="max-w-xl mx-auto flex flex-col sm:flex-row gap-2">
+                                <input type="text" id="question-tab2" class="flex-grow p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none" placeholder="Em muốn hỏi gì về các dụng cụ đo lường?">
+                                <button onclick="handleAskThanhLam('tab2')" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-transform hover:scale-105">Hỏi Thầy</button>
+                            </div>
+                            <div id="response-tab2" class="mt-4 p-4 bg-green-50 rounded-lg min-h-[50px] text-gray-700 max-w-xl mx-auto"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab 3: Dụng cụ điện -->
+                <div id="tab3" class="tab-content">
+                     <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6">
+                        <h2 class="text-3xl font-bold text-blue-800 mb-2 text-center">Thế giới của Dòng điện</h2>
+                        <p class="text-center text-gray-600 mb-8">Bây giờ, chúng ta cùng du hành vào một thế giới vô hình nhưng đầy quyền năng: thế giới điện! Mỗi dụng cụ là một "nhân vật" với nhiệm vụ riêng biệt.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://daisonec.com/upload/Bi%E1%BA%BFn%20th%E1%BA%BF%20ngu%E1%BB%93n%20Frederiksen%20%C4%90an%20m%E1%BA%A1ch.png" alt="Biến áp nguồn" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Biến+áp+nguồn';">
+                                <h3 class="font-bold text-xl text-blue-800">Biến áp nguồn</h3>
+                                <p class="text-gray-700 mt-2">Đây là "trái tim" của các thí nghiệm điện, cung cấp năng lượng an toàn bằng cách chuyển đổi điện áp 220V thành các mức nhỏ hơn.</p>
+                            </div>
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://www.vietjack.com/cong-thuc/images/ampe-ke-la-gi-co-nhung-loai-ampe-ke-nao-1.PNG" alt="Ampe kế" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Ampe+kế';">
+                                <h3 class="font-bold text-xl text-blue-800">Ampe kế</h3>
+                                <p class="text-gray-700 mt-2">Giống như một "cảnh sát giao thông", Ampe kế đo độ "tấp nập" của dòng điện (cường độ dòng điện) trong mạch.</p>
+                            </div>
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://baoanjsc.com.vn/Images/Upload/tin-tuc/von-ke-la-gi/von-ke-la-gi-9.jpg" alt="Vôn kế" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Vôn+kế';">
+                                <h3 class="font-bold text-xl text-blue-800">Vôn kế</h3>
+                                <p class="text-gray-700 mt-2">Người bạn này đo "sức mạnh" của nguồn điện (hiệu điện thế), cho biết năng lượng mà dòng điện mang theo.</p>
+                            </div>
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://lh5.googleusercontent.com/proxy/o3p_T6rDgvCrjKyMMZK5KF__pjVJ8RybpUAiiVeQgMfIx0Oi2T5sHeDkRAtOfsxnKz5YxkInW2b_gKIikdztb8pCc0cp6w" alt="Dây nối" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Dây+nối';">
+                                <h3 class="font-bold text-xl text-blue-800">Dây nối</h3>
+                                <p class="text-gray-700 mt-2">Là những "con đường" để dòng điện chạy từ nơi này đến nơi khác, kết nối các bộ phận trong mạch thành một thể thống nhất.</p>
+                            </div>
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lt4xcxeoxjgkcd" alt="Công tắc" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Công+tắc';">
+                                <h3 class="font-bold text-xl text-blue-800">Công tắc (Khóa K)</h3>
+                                <p class="text-gray-700 mt-2">Người "gác cổng" của mạch điện. Bật lên là "mở cửa" cho dòng điện chạy qua, tắt đi là "đóng cửa", ngắt dòng điện.</p>
+                            </div>
+                            <div class="bg-white/80 p-5 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <img src="https://img.lazcdn.com/g/p/1bea15a1e45605220b36d12514faf8cd.jpg_720x720q80.jpg" alt="Bóng đèn và đui" class="h-36 mb-4 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/150x150/EBF5FF/7F9CF5?text=Bóng+đèn';">
+                                <h3 class="font-bold text-xl text-blue-800">Bóng đèn</h3>
+                                <p class="text-gray-700 mt-2">Kết quả của dòng điện! Khi có điện chạy qua, bóng đèn sẽ phát sáng, biến điện năng thành quang năng một cách kỳ diệu.</p>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <h3 class="text-2xl font-bold text-yellow-700 mb-4 text-center">Góc tương tác của Thầy Lâm</h3>
+                            <div class="max-w-xl mx-auto flex flex-col sm:flex-row gap-2">
+                                <input type="text" id="question-tab3" class="flex-grow p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="Các em có tò mò về dụng cụ điện không?">
+                                <button onclick="handleAskThanhLam('tab3')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-transform hover:scale-105">Hỏi Thầy</button>
+                            </div>
+                            <div id="response-tab3" class="mt-4 p-4 bg-blue-50 rounded-lg min-h-[50px] text-gray-700 max-w-xl mx-auto"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 4: An toàn -->
+                <div id="tab4" class="tab-content">
+                     <div class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6">
+                        <h2 class="text-3xl font-bold text-red-700 mb-2 text-center">Hiệp sĩ áo trắng & Quy tắc vàng</h2>
+                        <p class="text-center text-gray-600 mb-8">Một nhà khoa học chân chính luôn đặt sự an toàn lên hàng đầu. Hãy cùng thầy ghi nhớ những quy tắc này như một bài hát nằm lòng nhé!</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div id="show-label-card" class="bg-white/80 p-6 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300 cursor-pointer">
+                                <i class="fa-solid fa-tags text-5xl text-red-500 mb-4"></i>
+                                <h3 class="font-bold text-xl text-red-800">Đọc kỹ "Chứng minh thư"</h3>
+                                <p class="text-gray-700 mt-2">Mỗi lọ hóa chất đều có nhãn ghi tên, công thức, cảnh báo... Tuyệt đối không dùng lọ không có nhãn hoặc nhãn đã bị mờ, rách. <span class="font-bold text-red-600 block mt-2">(Nhấn vào đây để xem ví dụ!)</span></p>
+                            </div>
+                            <div class="bg-white/80 p-6 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                 <i class="fa-solid fa-hand-sparkles text-5xl text-red-500 mb-4"></i>
+                                <h3 class="font-bold text-xl text-red-800">Không tay không bắt giặc</h3>
+                                <p class="text-gray-700 mt-2">Tuyệt đối không dùng tay trực tiếp lấy hóa chất. Hãy dùng thìa xúc cho hóa chất bột hoặc panh gắp cho hóa chất dạng hạt to. Cứ như một vị tướng đang điều binh khiển tướng vậy!</p>
+                            </div>
+                            <div class="bg-white/80 p-6 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                 <i class="fa-solid fa-recycle text-5xl text-red-500 mb-4"></i>
+                                <h3 class="font-bold text-xl text-red-800">Hóa chất thừa không về "nhà cũ"</h3>
+                                <p class="text-gray-700 mt-2">Nếu còn thừa hóa chất sau khi làm thí nghiệm, các em đừng đổ lại vào bình chứa ban đầu nhé. Việc này có thể làm hỏng cả lọ hóa chất đấy. Hãy hỏi thầy để biết cách xử lý đúng đắn.</p>
+                            </div>
+                            <div class="bg-white/80 p-6 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                 <i class="fa-solid fa-bullhorn text-5xl text-red-500 mb-4"></i>
+                                <h3 class="font-bold text-xl text-red-800">Báo cáo ngay cho "Tổng chỉ huy"</h3>
+                                <p class="text-gray-700 mt-2">Nếu không may bị hóa chất dính vào người, hoặc làm đổ, tràn ra ngoài, các em phải bình tĩnh và báo ngay cho giáo viên. Thầy cô chính là "Tổng chỉ huy" sẽ giúp các em xử lý an toàn.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-12">
+                            <h3 class="text-2xl font-bold text-orange-600 mb-4 text-center">Góc tương tác của Thầy Lâm</h3>
+                            <div class="max-w-xl mx-auto flex flex-col sm:flex-row gap-2">
+                                <input type="text" id="question-tab4" class="flex-grow p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none" placeholder="Các em có câu hỏi nào về an toàn không?">
+                                <button onclick="handleAskThanhLam('tab4')" class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-transform hover:scale-105">Hỏi Thầy</button>
+                            </div>
+                            <div id="response-tab4" class="mt-4 p-4 bg-red-50 rounded-lg min-h-[50px] text-gray-700 max-w-xl mx-auto"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 5: Kiểm tra kiến thức -->
+                <div id="tab5" class="tab-content">
+                    <div id="quiz-container" class="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg p-6 max-w-3xl mx-auto">
+                        <h2 class="text-2xl font-bold text-center text-green-700 mb-6">Thử tài cùng Thầy Lâm!</h2>
+                        <div id="quiz-question-area">
+                            <p id="question-text" class="text-lg font-semibold mb-4"></p>
+                            <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                            <div class="text-center mt-6">
+                                <button id="next-button" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-8 rounded-lg shadow-md transition-transform hover:scale-105 hidden">Câu tiếp theo</button>
+                            </div>
+                        </div>
+                        <div id="quiz-result-area" class="hidden text-center">
+                            <h3 class="text-3xl font-bold text-yellow-700 mb-4">Hoàn thành!</h3>
+                            <p id="score-text" class="text-xl mb-2"></p>
+                            <p id="percentage-text" class="text-5xl font-bold text-green-600 mb-4"></p>
+                            <p id="feedback-text" class="text-gray-700 italic"></p>
+                            <button id="restart-button" class="mt-6 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-8 rounded-lg shadow-md transition-transform hover:scale-105">Làm lại</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <!-- Modal for Tab 4 -->
+    <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 hidden modal">
+        <div class="bg-white p-6 rounded-lg max-w-4xl w-full relative modal-content">
+            <button id="close-modal-btn" class="absolute top-2 right-4 text-gray-500 hover:text-gray-800 text-3xl font-bold">&times;</button>
+            <h3 class="text-2xl font-bold text-center mb-4 text-red-800">Giải mã Nhãn Hóa chất</h3>
+            <div class="grid md:grid-cols-2 gap-6 items-center">
+                <div>
+                    <img src="https://i.pinimg.com/736x/08/d3/e5/08d3e59f6be116af17ce16be12ccc168.jpg" alt="Ví dụ nhãn hóa chất" class="w-full h-auto rounded shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/600x300/FEE2E2/991B1B?text=Lỗi+tải+ảnh';">
+                </div>
+                <div class="text-left bg-red-50 p-4 rounded-lg">
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start"><span class="font-semibold text-red-700 w-40 shrink-0">+ Tên hoá chất:</span><span>sodium hydroxide.</span></li>
+                        <li class="flex items-start"><span class="font-semibold text-red-700 w-40 shrink-0">+ Công thức hoá học:</span><span>NaOH.</span></li>
+                        <li class="flex items-start"><span class="font-semibold text-red-700 w-40 shrink-0">+ Độ tinh khiết:</span><span>AR – hoá chất tinh khiết.</span></li>
+                        <li class="flex items-start"><span class="font-semibold text-red-700 w-40 shrink-0">+ Khối lượng:</span><span>500g.</span></li>
+                        <li class="flex items-start"><span class="font-semibold text-red-700 w-40 shrink-0">+ Tiêu chuẩn chất lượng:</span><span>TCCS 51/2008/HCĐG.</span></li>
+                        <li class="flex items-start"><span class="font-semibold text-red-700 w-40 shrink-0">+ Hạn sử dụng:</span><span>3 năm kể từ ngày sản xuất.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Vui lòng thay thế '[Dán API Key của bạn vào đây]' bằng API Key của bạn
+        const GEMINI_API_KEY = "[Dán API Key của bạn vào đây]";
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(item => item.classList.remove('active'));
+                    contents.forEach(item => item.classList.remove('active'));
+                    tab.classList.add('active');
+                    const targetContent = document.getElementById(tab.getAttribute('data-tab'));
+                    if(targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
+
+            // Modal logic for Tab 4
+            const showLabelCard = document.getElementById('show-label-card');
+            const imageModal = document.getElementById('image-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+
+            if (showLabelCard && imageModal && closeModalBtn) {
+                showLabelCard.addEventListener('click', () => {
+                    imageModal.classList.remove('hidden');
+                });
+                closeModalBtn.addEventListener('click', () => {
+                    imageModal.classList.add('hidden');
+                });
+                imageModal.addEventListener('click', (e) => {
+                    if (e.target === imageModal) {
+                        imageModal.classList.add('hidden');
+                    }
+                });
+            }
+
+            setupQuiz();
+        });
+        
+        const quizData = [
+            { question: "Dụng cụ nào có mỏ để dễ dàng rót chất lỏng?", options: ["Bình tam giác", "Ống đong", "Cốc có mỏ", "Ống nghiệm"], answer: "Cốc có mỏ" },
+            { question: "Để đo chính xác thể tích chất lỏng, ta nên dùng dụng cụ nào?", options: ["Cốc có mỏ", "Ống đong", "Bình cầu", "Bát sứ"], answer: "Ống đong" },
+            { question: "Dụng cụ nào có cổ hẹp, thân phình to để tránh văng hóa chất khi lắc?", options: ["Bình tam giác", "Phễu", "Ống nghiệm", "Cốc có mỏ"], answer: "Bình tam giác" },
+            { question: "Để biết một dung dịch có tính 'chua' hay 'kiềm', ta dùng dụng cụ nào?", options: ["Nhiệt kế", "Bút đo pH", "Ampe kế", "Huyết áp kế"], answer: "Bút đo pH" },
+            { question: "Khi đun nóng ống nghiệm, ta nên kẹp ống ở vị trí nào?", options: ["Ở giữa ống", "Ở đáy ống", "1/3 ống tính từ miệng", "Bất kỳ vị trí nào"], answer: "1/3 ống tính từ miệng" },
+            { question: "Nếu hóa chất dùng xong còn thừa, em nên làm gì?", options: ["Đổ lại vào bình chứa cũ", "Đổ xuống cống", "Vứt vào sọt rác", "Xử lí theo hướng dẫn của giáo viên"], answer: "Xử lí theo hướng dẫn của giáo viên" },
+            { question: "Để đo cường độ dòng điện trong mạch, Thầy Lâm sẽ dùng dụng cụ nào?", options: ["Vôn kế", "Nhiệt kế", "Ampe kế", "Biến áp nguồn"], answer: "Ampe kế" },
+            { question: "Hành động nào sau đây là KHÔNG an toàn trong phòng thí nghiệm?", options: ["Đọc kỹ nhãn hóa chất", "Đeo kính bảo hộ", "Dùng tay không lấy hóa chất rắn", "Rửa tay sau khi làm thí nghiệm"], answer: "Dùng tay không lấy hóa chất rắn" }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function setupQuiz() {
+            const nextButton = document.getElementById('next-button');
+            const restartButton = document.getElementById('restart-button');
+            
+            nextButton.addEventListener('click', () => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < quizData.length) {
+                    displayQuestion();
+                } else {
+                    showResults();
+                }
+            });
+
+            restartButton.addEventListener('click', () => {
+                currentQuestionIndex = 0;
+                score = 0;
+                document.getElementById('quiz-question-area').classList.remove('hidden');
+                document.getElementById('quiz-result-area').classList.add('hidden');
+                displayQuestion();
+            });
+            
+            displayQuestion();
+        }
+        
+        function displayQuestion() {
+            const questionData = quizData[currentQuestionIndex];
+            document.getElementById('question-text').textContent = `Câu ${currentQuestionIndex + 1}: ${questionData.question}`;
+            
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+            
+            questionData.options.forEach(option => {
+                const button = document.createElement('button');
+                button.textContent = option;
+                button.className = 'w-full p-4 border rounded-lg text-left transition-all duration-200 hover:bg-yellow-100 focus:bg-green-100 focus:ring-2 focus:ring-green-400';
+                button.onclick = (e) => handleOptionClick(e.target, questionData.answer);
+                optionsContainer.appendChild(button);
+            });
+            document.getElementById('next-button').classList.add('hidden');
+        }
+
+        function handleOptionClick(button, correctAnswer) {
+            const allOptions = document.querySelectorAll('#options-container button');
+            allOptions.forEach(opt => {
+                opt.disabled = true;
+                if (opt.textContent === correctAnswer) {
+                    opt.classList.remove('hover:bg-yellow-100');
+                    opt.classList.add('bg-green-200', 'border-green-500');
+                } else if (opt === button) {
+                    opt.classList.remove('hover:bg-yellow-100');
+                    opt.classList.add('bg-red-200', 'border-red-500');
+                }
+            });
+
+            if(button.textContent === correctAnswer) score++;
+            
+            document.getElementById('next-button').classList.remove('hidden');
+        }
+
+        function showResults() {
+            document.getElementById('quiz-question-area').classList.add('hidden');
+            document.getElementById('quiz-result-area').classList.remove('hidden');
+
+            const percentage = Math.round((score / quizData.length) * 100);
+            document.getElementById('score-text').textContent = `Các em đã trả lời đúng ${score} trên ${quizData.length} câu.`;
+            document.getElementById('percentage-text').textContent = `${percentage}%`;
+
+            let feedback = "";
+            if (percentage === 100) {
+                feedback = "Xuất sắc! Các em đúng là những nhà khoa học nhí tài ba! Thầy rất tự hào!";
+            } else if (percentage >= 70) {
+                feedback = "Rất tốt! Các em đã nắm bài rất chắc. Chỉ cần cố gắng thêm một chút nữa thôi.";
+            } else if (percentage >= 50) {
+                feedback = "Khá lắm! Kiến thức nền của các em ổn rồi. Hãy xem lại bài giảng một chút để hoàn thiện hơn nhé.";
+            } else {
+                feedback = "Không sao cả! Thất bại là mẹ thành công. Cùng thầy ôn lại bài và thử lại nhé, thầy tin các em sẽ làm tốt hơn!";
+            }
+            document.getElementById('feedback-text').textContent = feedback;
+        }
+
+        async function handleAskThanhLam(tabId) {
+            const input = document.getElementById(`question-${tabId}`);
+            const responseContainer = document.getElementById(`response-${tabId}`);
+            const userQuestion = input.value.trim();
+
+            if (!userQuestion) {
+                responseContainer.innerHTML = "Các em cứ mạnh dạn đặt câu hỏi nhé, thầy không ngại đâu!";
+                return;
+            }
+
+            if (GEMINI_API_KEY === "[Dán API Key của bạn vào đây]") {
+                responseContainer.innerHTML = '<span class="text-red-600 font-bold">Thầy Lâm đang bận một chút!</span><br>Có vẻ như API Key chưa được cấu hình. Vui lòng kiểm tra lại trong mã nguồn nhé.';
+                return;
+            }
+            
+            responseContainer.innerHTML = "Để thầy suy nghĩ một chút nhé...";
+            input.disabled = true;
+
+            const steelLawPrompt = `
+                Vai trò: "Bạn là Thầy Lâm, một giáo viên khoa học tự nhiên gần gũi, sâu sắc, chuyên dùng các câu chuyện ngụ ngôn để giảng bài. Bạn có khả năng làm cho các kiến thức khô khan trở nên sống động và dễ nhớ."
+                Giới hạn chuyên môn: "Bạn CHỈ được trả lời các câu hỏi liên quan chặt chẽ đến chủ đề của bài giảng là 'các dụng cụ thí nghiệm và ứng dụng của nó', bao gồm dụng cụ thủy tinh, dụng cụ đo lường, dụng cụ đun nóng, dụng cụ điện, và các quy tắc an toàn trong phòng thí nghiệm. Ví dụ: công dụng của bình tam giác, cách đun nóng ống nghiệm, ampe kế dùng để làm gì, tại sao không được đổ hóa chất thừa lại bình cũ."
+                Quy tắc từ chối: "Nếu người dùng hỏi về các chủ đề không liên quan (ví dụ: toán, lịch sử, phim ảnh, chuyện cá nhân...), bạn BẮT BUỘC phải từ chối một cách khéo léo và hài hước theo đúng văn phong của Thầy Lâm. Ví dụ: 'Ôi, câu hỏi này hay đấy nhưng lại thuộc về môn Lịch sử rồi. Hôm nay chúng ta hãy tập trung vào những người bạn thủy tinh trong phòng thí nghiệm đã nhé!' hoặc 'Haha, thầy cũng thích xem phim lắm, nhưng giờ khoa học đang vẫy gọi chúng ta kìa!'."
+                Câu hỏi của học sinh: "${userQuestion}"
+            `;
+            
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: steelLawPrompt }] }] }),
+                });
+
+                if (!response.ok) throw new Error(`API call failed with status: ${response.status}`);
+
+                const data = await response.json();
+                let aiResponse = "Thầy xin lỗi, có một chút trục trặc kỹ thuật. Các em thử lại sau nhé.";
+
+                if (data.candidates?.[0]?.content?.parts?.[0]?.text) {
+                    aiResponse = data.candidates[0].content.parts[0].text;
+                }
+                
+                responseContainer.innerHTML = `<p class="ai-response">${aiResponse}</p><br><p class="text-right text-sm text-green-700 font-semibold italic">--- Được giải đáp bởi Thầy Lâm.</p>`;
+
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                responseContainer.innerHTML = "Ối, có vẻ đường truyền tín hiệu tới phòng thí nghiệm của thầy đang gặp sự cố. Các em vui lòng thử lại sau nhé!";
+            } finally {
+                input.value = "";
+                input.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
